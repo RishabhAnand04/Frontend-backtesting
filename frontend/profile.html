@@ -548,15 +548,15 @@
                                                                                 <form>
                                                                                     <div class="row">
                                                                                         <div class="col-md-9 col-xl-11" style="width: auto;">
-                                                                                            <div class="box-bg">
+                                                                                            <div class="box-bg" id="table-holder">
                                                                                                 <div class="row">
                                                                                                     <div class="col-md-2 col-xl-2 align-self-center font-md text-dark-blue"><label class="col-form-label p-0" for="table-no"><strong>Table No.:</strong><br></label></div>
                                                                                                     <div class="col-md-4 col-xl-3"></div>
-                                                                                                    <div class="col-md-2 col-xl-2 offset-md-3 offset-xl-4 align-self-center"><button class="btn btn-info btn-sm d-block add-row btn-xs w-100" type="button" style="background: var(--bs-blue);"><i class="fa fa-plus"></i><strong>Add Condition</strong></button></div>
+                                                                                                    <div class="col-md-2 col-xl-2 offset-md-3 offset-xl-4 align-self-center"><button class="btn btn-info btn-sm d-block add-row btn-xs w-100" onclick="addTable()" type="button" style="background: var(--bs-blue);"><i class="fa fa-plus"></i><strong>Add Condition</strong></button></div>
                                                                                                     <div class="col-md-1 col-xl-1 align-self-center"><button class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" type="button"><i class="fa fa-trash-o"></i></button></div>
                                                                                                 </div>
                                                                                                 <div class="table-responsive tbl-wfx mt-1 kot-table" style="width: auto;">
-                                                                                                    <table class="table table-sm">
+                                                                                                    <table class="table table-sm" id="condition1">
                                                                                                         <thead class="text-dark font-md">
                                                                                                             <tr class="text-dark-blue">
                                                                                                                 <th class="text-center w-3x"><strong>#</strong></th>
@@ -607,7 +607,7 @@
                                                                                                                 </td>
                                                                                                             </tr>
                                                                                                         </tbody>
-                                                                                                    </table>
+                                                                                                    </table>                                                       
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -661,6 +661,7 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+    <script src="profile-js.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Billing-Table-with-Add-Row--Fixed-Header-Feature-Billing-Table-with-Add-Row--Fixed-Header.js"></script>
     <script src="assets/js/Bootstrap-DateTime-Picker-amoment.js"></script>
