@@ -19,11 +19,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
     <link rel="stylesheet" href="assets/css/Responsive-UI-Card.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(48,6,81);">
+        <!-- <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(48,6,81);">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
                     <div class="sidebar-brand-text mx-3"><span></span></div>
@@ -38,11 +39,29 @@
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
+        </nav> -->
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(27,3,46);height: auto;min-width: 0px;width: 162.3px;max-width: 186px;">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#" style="width: 179px;"><img src="assets/img/image-removebg-preview.png" style="width: 165px;">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span></span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar" style="width: 220px;padding-left: 0px;margin-left: 12px;">
+                    <li class="nav-item"><a class="nav-link " href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="fas fa-code"></i><span>Strategies</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html"><i class="fas fa-table"></i><span>Reports</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-tools"></i><span>Optimizer</span></a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <h3 class="text-dark mb-0">&nbsp;Trading made easy.......</h3>
                         <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group"></div>
                         </form>
@@ -50,8 +69,11 @@
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        <div class="input-group">
+                                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -59,21 +81,24 @@
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                        <h6 class="dropdown-header">alerts center</h6>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="me-3">
                                                 <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
                                             </div>
                                             <div><span class="small text-gray-500">December 12, 2019</span>
                                                 <p>A new monthly report is ready to download!</p>
                                             </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="me-3">
                                                 <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
                                             </div>
                                             <div><span class="small text-gray-500">December 7, 2019</span>
                                                 <p>$290.29 has been deposited into your account!</p>
                                             </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="me-3">
                                                 <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
                                             </div>
@@ -87,7 +112,8 @@
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                        <h6 class="dropdown-header">alerts center</h6>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
                                                 <div class="bg-success status-indicator"></div>
                                             </div>
@@ -95,7 +121,8 @@
                                                 <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
                                                 <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
                                             </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar2.jpeg">
                                                 <div class="status-indicator"></div>
                                             </div>
@@ -103,7 +130,8 @@
                                                 <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
                                                 <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
                                             </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar3.jpeg">
                                                 <div class="bg-warning status-indicator"></div>
                                             </div>
@@ -111,7 +139,8 @@
                                                 <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
                                                 <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
                                             </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                        </a>
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
                                             <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar5.jpeg">
                                                 <div class="bg-success status-indicator"></div>
                                             </div>
@@ -127,8 +156,10 @@
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
-                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a>
+                                        <a
+                                        class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -136,403 +167,354 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Build Your Strategy</h3>
-                    <div class="row mb-3">
-                        <div class="col-lg-8" style="width: auto;">
-                            <div class="row mb-3 d-none">
-                                <div class="col">
-                                    <div class="card text-white bg-primary shadow">
-                                        <div class="card-body">
-                                            <div class="row mb-2">
-                                                <div class="col">
-                                                    <p class="m-0">Peformance</p>
-                                                    <p class="m-0"><strong>65.2%</strong></p>
-                                                </div>
-                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
-                                            </div>
-                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card text-white bg-success shadow">
-                                        <div class="card-body">
-                                            <div class="row mb-2">
-                                                <div class="col">
-                                                    <p class="m-0">Peformance</p>
-                                                    <p class="m-0"><strong>65.2%</strong></p>
-                                                </div>
-                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
-                                            </div>
-                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <form class="m-2 d-flex align-items-center" style="margin-bottom: 13px;" action="" onsubmit="saveName(event)">
+                        <label class="form-label me-2"><h4 class="m-0">Enter Strategy Name : </h4></label>
+                        <div class="form-group ">
+                            <input type="text" required placeholder="" id="strategy_name" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm ms-2" onclick="">Save</button>
+                    </form>
+                    
+                    
                             <div class="row">
-                                <div class="col-xxl-12" style="margin-right: 415px;padding-right: 0px;">
+                                <div class="col-xxl-12" >
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
                                             <p class="text-primary m-0 fw-bold">Data Setting</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
+                                            <form id="data_setting"  action="" onsubmit="dataSetting(event)">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: 13px;"><label class="form-label" for="username"><strong>Symbol</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>SBIN</option>
-         <option value="">ITC</option>
-         <option>BAJAJ</option>
-         <option>SBIN</option>
-         <option>RELIANCE</option>
-         <option>SBIN</option>
-         <option>SBIN</option>
-      </select>
-  </div>
-</form></div>
+                                                        <div class="mb-3" style="margin-bottom: 13px;">
+                                                            <label class="form-label" ><strong>Symbol</strong></label>
+                                                            
+                                                                <div class="form-group">
+                                                                    <select name="symbol" required id="symbol" class="form-control">
+                                                                    </select>
+                                                                </div>
+                                                            
+                                                        </div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email Address</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>1m</option>
-         <option>3m</option>
-         <option>5m</option>
-         <option>15m</option>
-         <option>30m</option>
-      </select>
-  </div>
-</form></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label" ><strong>Time Period</strong></label>
+                                                                <div class="form-group">
+                                                                    <select class="form-control" type="string" required name="time_period" id="time_period">
+                                                                        <option value="1m">1 minute</option>
+                                                                        <option value="3m">3 minute</option>
+                                                                        <option value="5m">5 minute</option>
+                                                                        <option value="15m">15 minute</option>
+                                                                        <option value="30m">30 minute</option>
+                                                                        <option value="1hr">1 hour</option>
+                                                                        <option value="2hr">2 hour</option>
+                                                                        <option value="1d">1 day</option>
+                                                                        <option value="1w">1 week</option>
+                                                                        <option value="1mo">1 month</option>
+                                                                        <option value="3mo">3 month</option>
+                                                                    </select>
+                                                                </div>
+                                                            
+                                                        </div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Quantity</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>1m</option>
-         <option>3m</option>
-         <option>5m</option>
-         <option>15m</option>
-         <option>30m</option>
-      </select>
-  </div>
-</form></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label" ><strong>Quantity</strong></label>
+                                                            
+                                                                <div class="form-group">
+                                                                    <input id="quantity" name="quantity" type="number" required class="form-control">
+                                                                </div>
+                                                            
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="row" style="margin-top: -7px;">
-                                                    <div class="col-sm-12 col-xl-7" style="height: 121px;width: 367.7px;">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Start Date</strong></label></div><select class="form-select display-inline-block">
-                                                            <option value="1" selected="">January</option>
-                                                            <option value="2">February</option>
-                                                            <option value="3">March</option>
-                                                            <option value="4">April</option>
-                                                            <option value="5">May</option>
-                                                            <option value="6">June</option>
-                                                            <option value="7">July</option>
-                                                            <option value="8">August</option>
-                                                            <option value="9">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
-                                                        </select><select class="form-select display-inline-block">
-                                                            <option value="1" selected="">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
-                                                            <option value="13">13</option>
-                                                            <option value="14">14</option>
-                                                            <option value="15">15</option>
-                                                            <option value="16">16</option>
-                                                            <option value="17">17</option>
-                                                            <option value="18">18</option>
-                                                            <option value="19">19</option>
-                                                            <option value="20">20</option>
-                                                            <option value="21">21</option>
-                                                            <option value="22">22</option>
-                                                            <option value="23">23</option>
-                                                            <option value="24">24</option>
-                                                            <option value="25">25</option>
-                                                            <option value="26">26</option>
-                                                            <option value="27">27</option>
-                                                            <option value="28">28</option>
-                                                            <option value="29">29</option>
-                                                            <option value="30">30</option>
-                                                            <option value="31">31</option>
-                                                        </select><select class="form-select display-inline-block">
-                                                            <option value="2016" selected="">2016</option>
-                                                            <option value="2017">2017</option>
-                                                        </select>
+                                                <div class="row flex" style="margin-top: 0;">
+                                                    <div class="col-sm-12 col-xl-7" style="height: auto;width:33%;">
+                                                        <div>
+                                                            <label class="form-label" for="first_name"><strong>Start Date</strong></label>
+                                                        </div>
+                                                        <input required class="mx-1 p-1" style="color: #858796;" type="date" id="start_date" name="start_date">
                                                     </div>
-                                                    <div class="col-sm-12 col-xl-7" style="height: 127px;width: 313.7px;">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>End Date</strong></label></div><select class="form-select display-inline-block">
-                                                            <option value="1" selected="">January</option>
-                                                            <option value="2">February</option>
-                                                            <option value="3">March</option>
-                                                            <option value="4">April</option>
-                                                            <option value="5">May</option>
-                                                            <option value="6">June</option>
-                                                            <option value="7">July</option>
-                                                            <option value="8">August</option>
-                                                            <option value="9">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
-                                                        </select><select class="form-select display-inline-block">
-                                                            <option value="1" selected="">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
-                                                            <option value="13">13</option>
-                                                            <option value="14">14</option>
-                                                            <option value="15">15</option>
-                                                            <option value="16">16</option>
-                                                            <option value="17">17</option>
-                                                            <option value="18">18</option>
-                                                            <option value="19">19</option>
-                                                            <option value="20">20</option>
-                                                            <option value="21">21</option>
-                                                            <option value="22">22</option>
-                                                            <option value="23">23</option>
-                                                            <option value="24">24</option>
-                                                            <option value="25">25</option>
-                                                            <option value="26">26</option>
-                                                            <option value="27">27</option>
-                                                            <option value="28">28</option>
-                                                            <option value="29">29</option>
-                                                            <option value="30">30</option>
-                                                            <option value="31">31</option>
-                                                        </select><select class="form-select display-inline-block">
-                                                            <option value="2016" selected="">2016</option>
-                                                            <option value="2017">2017</option>
-                                                        </select>
+                                                    <div class="col-sm-12 col-xl-7" style="height: auto;width: min-content;">
+                                                        <div class="">
+                                                            <label class="form-label" for="first_name"><strong>End Date</strong></label>
+                                                        </div>
+                                                        <input required class="mx-1 p-1" type="date" style="color: #858796;" id="end_date" name="end_date">
                                                     </div>
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="margin-top: -16px;">Save Settings</button></div>
+
+                                                <div class="mb-3 mt-3">
+                                                    <button type="submit" class="btn btn-primary btn-sm" >Save Settings</button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
+
+
+
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Indicator Builder (type 1 -&gt; 1 input parameters)</p>
+                                            <p class="text-primary m-0 fw-bold">Indicators</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Indicator Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>RSI</option>
-         <option value="">EMA</option>
-         <option>MACD</option>
-         <option>HMA</option>
-         <option>STOCH</option>
-         <option>AROON</option>
-         <option>TSI</option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Indicator Name</strong></label><input class="form-control" type="text" id="first_name-2" placeholder="John" name="first_name"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Period / Length</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
-                                            </form>
+                                            <table class="table table-bordered">
+                                                <thead class="thead-dark" id="table-head">
+
+                                                </thead>
+                                                <tbody id="table-body">
+
+                                                </tbody>
+                                            </table>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#indicatorbuilder">Add Indicator</button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card shadow mb-3">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Indicator Builder (type 2 -&gt; 3 input parameter)</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Indicator Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>RSI</option>
-         <option value="">EMA</option>
-         <option>MACD</option>
-         <option>HMA</option>
-         <option>STOCH</option>
-         <option>AROON</option>
-         <option>TSI</option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Indicator Name</strong></label><input class="form-control" type="text" id="first_name-3" placeholder="John" name="first_name"></div>
-                                                    </div>
+
+                                    <div class="modal fade" id="indicatorbuilder" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5 m-0" id="staticBackdropLabel">Indicator Builder</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Fast Signal</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Slow Signal</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Length</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
+                                                <div class="modal-body">
+                                                    <form id="indicator-form" action="" onsubmit="indicatorCreate(event)">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;">
+                                                                    <label class="form-label" ><strong>Indicator Type</strong></label>
+                                                                    <div class="form-group">
+                                                                        <select id="indicator-select" class="form-control" data-live-search="true" onchange="addFields()">
+                                                                            <option value="" selected disabled hidden>Choose here</option>
+                                                                            <option value="EMA">EMA</option>
+                                                                            <option value="HMA">HMA</option>
+                                                                            <option value="SMA">SMA</option>
+                                                                            <option value="RSI">RSI</option>
+                                                                            <option value="SUPERTREND">SUPERTREND</option>
+                                                                            <option value="ADX">ADX</option>
+                                                                            <option value="BBANDS_UPPER">BBANDS_UPPER</option>
+                                                                            <option value="BBANDS_LOWER">BBANDS_LOWER</option>
+                                                                            <option value="ATR">ATR</option>
+                                                                            <option value="MACD">MACD</option>
+                                                                            <option value="MACD_H">MACD_H</option>
+                                                                            <option value="MACDS">MACDS</option>
+                                                                            <option value="VWAP">VWAP</option>
+                                                                            <option value="VALUE">VALUE</option>
+                                                                            <option value="CLOSE">CLOSE</option>
+                                                                            <option value="OPEN">OPEN</option>
+                                                                            <option value="HIGH">HIGH</option>
+                                                                            <option value="LOW">LOW</option>
+                                                                            <option value="LTP">LTP</option>
+                                                                            <option value="VOLUME">VOLUME</option>
+                                                                            <option value="HL2">HL2</option>
+                                                                            <option value="HL3">HL3</option>
+                                                                            <option value="PREV_DAY_HIGH">PREV_DAY_HIGH</option>
+                                                                            <option value="PREV_DAY_LOW">PREV_DAY_LOW</option>
+                                                                            <option value="STOCH_K">STOCH_K</option>
+                                                                            <option value="STOCH_D">STOCH_D</option>
+                                                                            <!-- <option value="CH_EXIT_LONG">CH_EXIT_LONG</option>
+                                                                            <option value="CH_EXIT_SHORT">CH_EXIT_SHORT</option> -->
+                                                                            <option value="CCI">CCI</option>
+                                                                            <option value="MFI">MFI</option>
+                                                                            <option value="CMF">CMF</option>
+                                                                            <option value="ROC">ROC</option>
+                                                                            <option value="AROON_DOWN">AROON_DOWN</option>
+                                                                            <option value="AROON_UP">AROON_UP</option>
+                                                                            <option value="AROON_OSCILLATOR">AROON_OSCILLATOR</option>
+                                                                            <option value="WILLR">WILLR</option>
+                                                                            <option value="TSI">TSI</option>
+                                                                            <option value="TSI_SIGNAL">TSI_SIGNAL</option>
+                                                                            <option value="PSAR_ABOVE">PSAR_ABOVE</option>
+                                                                            <option value="PSAR_BELOW">PSAR_BELOW</option>
+                                                                            <option value="CHOP">CHOP</option>
+                                                                            <!-- <option value="SMA_RSI">SMA_RSI</option>
+                                                                            <option value="HIGH-LOW">HIGH-LOW</option>
+                                                                            <option value="PREV_DAY_CLOSE">PREV_DAY_CLOSE</option>
+                                                                            <option value="PIVOT">PIVOT</option>
+                                                                            <option value="BCP">BCP</option>
+                                                                            <option value="OPEN-LOW">OPEN-LOW</option>
+                                                                            <option value="HIGH-OPEN">HIGH-OPEN</option>
+                                                                            <option value="RSI_BUY">RSI_BUY</option>
+                                                                            <option value="RSI_SELL">RSI_SELL</option>
+                                                                            <option value="ORB_HIGH">ORB_HIGH</option>
+                                                                            <option value="ORB_LOW">ORB_LOW</option> -->
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" ><strong>Indicator Name</strong></label>
+                                                                    <input class="form-control" type="text" id="indicator-name" required="true" placeholder="Indicator Name" name="indicatorName">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" id="dynamic-fields">
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div> -->
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
-                                            </form>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Create</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card shadow mb-3">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Indicator Builder (type 2 -&gt; 2 input parameter)</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Indicator Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>RSI</option>
-         <option value="">EMA</option>
-         <option>MACD</option>
-         <option>HMA</option>
-         <option>STOCH</option>
-         <option>AROON</option>
-         <option>TSI</option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Indicator Name</strong></label><input class="form-control" type="text" id="first_name-1" placeholder="John" name="first_name"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Fast Signal</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Slow Signal</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
-                                            </form>
-                                        </div>
-                                    </div>
+
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
                                             <p class="text-primary m-0 fw-bold">Strategy Builder</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
+                                            <form id="strategy_details" onsubmit="strategyDetails(event)">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email" style="font-size: 23px;"><strong>DETAILS</strong></label></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label" ><strong>Entry Type</strong></label>
+                                                            
+                                                                <div class="form-group">
+                                                                    <select required id="entry_type" name="entry_type" class="form-control">
+                                                                        <option value="BUY">BUY</option>
+                                                                        <option value="SELL">SELL</option>
+                                                                    </select>
+                                                                </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" ><strong>Trading Type</strong></label>
+                                                            
+                                                                <div class="form-group">
+                                                                    <select required id="trading_type" name="trading_type" class="form-control" onchange="toggleEntryExitTime()">
+                                                                        <option value="Delivery">Delivery</option>
+                                                                        <option value="Intraday">Intraday</option>
+                                                                    </select>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" ><strong>Strategy Type</strong></label>
+                                                            
+                                                                <div class="form-group">
+                                                                    <select class="form-control">
+                                                                        <option>Single Entry - Exit</option>
+                                                                        <option disabled value="">Multiple Entry - Single Exit (Coming Soon)</option>
+                                                                        <option disabled value="">Multiple Entry - Exit (Coming Soon) </option>
+                                                                    </select>
+                                                                </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" id="time_fields" style="display: none;">
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Entry Time</strong></label>
+                                                            <input class="form-control" id="entry_time" name="entry_time" type="time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Exit Time</strong></label>
+                                                            <input class="form-control" id="exit_time" name="exit_time" type="time">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Instrument Type</strong></label>
+                                                            
+                                                                <div class="form-group">
+                                                                    <select required id="Instrument_type" name="Instrument_type" class="form-control" onchange="toggleOptionsFields()">
+                                                                        <option value="FUTURES">FUTURES</option>
+                                                                        <option value="EQUITY">EQUITY</option>
+                                                                        <option value="OPTIONS">OPTIONS</option>
+                                                                    </select>
+                                                                </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="row" id="options_fields" style="display: none;">
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Moneyness</strong></label>
+                                                            <input id="moneyness" name="moneyness" class="form-control" placeholder="varies from -1 to 10" type="number" step="1" min="-10" max="10">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Expiry Type</strong></label>
+                                                            <div class="form-group">
+                                                                <select id="expiry_type" name="expiry_type" class="form-control">
+                                                                    <option value="cm">CURRENT MONTH</option>
+                                                                    <option value="nm">NEXT MONTH</option>
+                                                                    <option value="cw">CURRENT WEEK</option>
+                                                                    <option value="nw">NEXT WEEK</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                    <div class="col">
                                                         <div class="mb-3"></div>
+                                                        <section>
+                                                            
+                                                            <div class="row ps-2">
+                                                                <div class="col">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">
+                                                                            <input type="checkbox" id="check_stoploss" onchange="toggleInputField('stoploss')">
+                                                                            <strong>Stoploss</strong>
+                                                                        </label>
+                                                                        <input  id="stoploss" name="stoploss" class="form-control" type="number" step="1" min="0" style="display: none;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">
+                                                                            <input type="checkbox" id="check_target" onchange="toggleInputField('target')">
+                                                                            <strong>Target</strong>
+                                                                        </label>
+                                                                        <input  id="target" name="target" class="form-control" type="number" step="1" min="0" style="display: none;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">
+                                                                            <input type="checkbox" id="check_trail_by" onchange="toggleInputField('trail_by')">
+                                                                            <strong>Trail by</strong>
+                                                                        </label>
+                                                                        <input  id="trail_by" name="trail_by" class="form-control" type="number" step="1" min="0" style="display: none;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">
+                                                                            <input type="checkbox" id="check_price_increase" onchange="toggleInputField('price_increase')">
+                                                                            <strong>If Price Increases by</strong>
+                                                                        </label>
+                                                                        <input  id="price_increase" name="price_increases" class="form-control" type="number" step="1" min="0" style="display: none;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </section>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Entry Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>BUY</option>
-         <option value="">SELL</option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Instrument Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>FUTURES</option>
-         <option value="">EQUITY</option>
-         <option>OPTIONS</option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Strategy Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>Single Entry - Exit</option>
-         <option value="">Multiple Entry - Single Exit (Coming Soon)</option>
-         <option>Multiple Entry - Exit (Coming Soon) </option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
+                                                <div class="mb-3">
+                                                    <button class="btn btn-primary btn-sm" type="submit">Save</button>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Moneyness</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Expiry Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>CURRENT MONTH</option>
-         <option value="">NEXT MONTH</option>
-         <option value="">CURRENT WEEK</option>
-         <option value="">NEXT WEEK</option>
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Trading Type</strong></label>
-<form class="form-inline">
-  <div class="form-group">
-     <select  class="form-control" >
-         <option>Intraday</option>
-         <option value="">Delivery</option>
-         
-      </select>
-  </div>
-</form></div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -1px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Entry Time</strong></label><input class="form-control mb-2 d-inline" id="myTime" type="time" onchange="onTimeChange()"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3" style="margin-bottom: -1px;padding-bottom: 0px;"><label class="form-label" for="username"><strong>Exit Time</strong></label><input class="form-control mb-2 d-inline" id="myTime-1" type="time" onchange="onTimeChange()"></div>
-                                                    </div>
-                                                </div>
+                                            </form>
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3"></div>
@@ -542,77 +524,121 @@
                                                                     <div class="col">
                                                                         <div class="card shadow-sm mb-2 db-graph">
                                                                             <div class="card-header p-2" style="background: var(--bs-blue);">
-                                                                                <h6 class="text-white m-0 font-md">CONDITIONS BUILDER</h6>
+                                                                                <h6 class="text-white m-0 font-md">CONDITIONS FOR ENTRY</h6>
                                                                             </div>
                                                                             <div class="card-body">
-                                                                                <form>
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-9 col-xl-11" style="width: auto;">
-                                                                                            <div class="box-bg" id="table-holder">
-                                                                                                <div class="row">
-                                                                                                    <div class="col-md-2 col-xl-2 align-self-center font-md text-dark-blue"><label class="col-form-label p-0" for="table-no"><strong>Table No.:</strong><br></label></div>
-                                                                                                    <div class="col-md-4 col-xl-3"></div>
-                                                                                                    <div class="col-md-2 col-xl-2 offset-md-3 offset-xl-4 align-self-center"><button class="btn btn-info btn-sm d-block add-row btn-xs w-100" onclick="addTable()" type="button" style="background: var(--bs-blue);"><i class="fa fa-plus"></i><strong>Add Condition</strong></button></div>
-                                                                                                    <div class="col-md-1 col-xl-1 align-self-center"><button class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" type="button"><i class="fa fa-trash-o"></i></button></div>
+                                                                                <div class="row">
+                                                                                    <div class="box-bg" id="table-holder">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-2 col-xl-2 align-self-center font-md text-dark-blue">
+                                                                                                <label class="col-form-label p-0" for="table-no"><strong>Conditions:</strong>
+                                                                                                    <br>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <div class="col d-flex justify-content-end">
+                                                                                                <div class="col-md-2 col-xl-2 offset-md-3 offset-xl-4 align-self-center">
+                                                                                                    <button class="btn btn-info btn-sm d-block add-row btn-xs" data-bs-toggle="modal" data-bs-target="#entryConditionBuilder" type="button" style="background: var(--bs-blue);"><i class="fa fa-plus" style="color: white;"></i><strong class="ms-1" style="color: white;">Add Condition</strong></button>
                                                                                                 </div>
-                                                                                                <div class="table-responsive tbl-wfx mt-1 kot-table" style="width: auto;">
-                                                                                                    <table class="table table-sm" id="condition1">
-                                                                                                        <thead class="text-dark font-md">
-                                                                                                            <tr class="text-dark-blue">
-                                                                                                                <th class="text-center w-3x"><strong>#</strong></th>
-                                                                                                                <th><strong>Indicator 1</strong></th>
-                                                                                                                <th><strong>Operator</strong></th>
-                                                                                                                <th><strong>Indicator 2</strong></th>
-                                                                                                                <th class="w-10x"><strong>Offset1</strong></th>
-                                                                                                                <th class="w-10x"><strong>Offset2</strong></th>
-                                                                                                                <th class="w-10x"><strong>Rate</strong></th>
-                                                                                                                <th class="w-10x"><strong>Amount</strong></th>
-                                                                                                            </tr>
-                                                                                                        </thead>
-                                                                                                        <tbody class="h-15x">
-                                                                                                            <tr>
-                                                                                                                <td class="text-center w-3x pt-2"><input type="checkbox"></td>
-                                                                                                                <td>
-                                                                                                                    <div class="mb-1 form-group"><select class="form-select form-select-sm tbl-wfx kot-table font-sm">
-                                                                                                                            <option value="1" selected="">-- Select Product --</option>
-                                                                                                                            <option value="1">Cheese Burger</option>
-                                                                                                                            <option value="2">Cheese Pizza</option>
-                                                                                                                        </select></div>
-                                                                                                                </td>
-                                                                                                                <td>
-                                                                                                                    <div class="mb-1 form-group"><select class="form-select form-select-sm tbl-wfx kot-table font-sm">
-                                                                                                                            <option value="1" selected="">-- Select Product --</option>
-                                                                                                                            <option value="1">Cheese Burger</option>
-                                                                                                                            <option value="2">Cheese Pizza</option>
-                                                                                                                        </select></div>
-                                                                                                                </td>
-                                                                                                                <td>
-                                                                                                                    <div class="mb-1 form-group"><select class="form-select form-select-sm tbl-wfx kot-table font-sm">
-                                                                                                                            <option value="1" selected="">-- Select Product --</option>
-                                                                                                                            <option value="1">Cheese Burger</option>
-                                                                                                                            <option value="2">Cheese Pizza</option>
-                                                                                                                        </select></div>
-                                                                                                                </td>
-                                                                                                                <td class="w-10x">
-                                                                                                                    <div class="mb-1 form-group"><input class="form-control form-control-sm font-sm" type="number" step="1" min="1"></div>
-                                                                                                                </td>
-                                                                                                                <td class="w-10x">
-                                                                                                                    <div class="mb-1 form-group"><input class="form-control form-control-sm font-sm" type="number" step="1" min="1"></div>
-                                                                                                                </td>
-                                                                                                                <td class="w-10x">
-                                                                                                                    <div class="mb-1 form-group"><input class="form-control form-control-sm font-sm" type="text" disabled=""></div>
-                                                                                                                </td>
-                                                                                                                <td class="w-10x">
-                                                                                                                    <div class="mb-1 form-group"><input class="form-control form-control-sm font-sm" type="text" disabled=""></div>
-                                                                                                                </td>
-                                                                                                            </tr>
-                                                                                                        </tbody>
-                                                                                                    </table>                                                       
+                                                                                                <div class="col-md-1 col-xl-1 align-self-center">
+                                                                                                    <button id="delete-button-entry" class="btn btn-danger btn-sm d-block delete-row btn-xs" type="button"><strong>Delete</strong><i class="fa fa-trash-o"></i></button>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
+                                                                                        <div class="table-responsive tbl-wfx mt-4 kot-table" style="width: auto;">
+                                                                                            <table class="table table-sm" id="entry-condition-table">
+                                                                                                <thead class="text-dark font-md" id="entry-condition-table-head">
+                                                                                                    <tr class="text-dark-blue">
+                                                                                                        <th class="text-center w-3x"><strong>#</strong></th>
+                                                                                                        <th><strong>Indicator 1</strong></th>
+                                                                                                        <th><strong>Operator</strong></th>
+                                                                                                        <th><strong>Indicator 2</strong></th>
+                                                                                                        <th class="w-10x px-0"><strong>Offset1</strong></th>
+                                                                                                        <th class="w-10x px-0"><strong>Offset2</strong></th>
+                                                                                                        <th class="w-10x"><strong>And/Or</strong></th>
+
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody id="entry-condition-table-body" class="h-15x">
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
                                                                                     </div>
-                                                                                </form>
+                                                                                </div>
+                                                                                <div class="modal fade" id="entryConditionBuilder" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                                    <div class="modal-dialog modal-xl">
+                                                                                        <div class="modal-content">
+                                                                                            <div class="modal-header">
+                                                                                                <h1 class="modal-title fs-5 m-0" id="staticBackdropLabel">Create Condition</h1>
+                                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                            </div>
+                                                                                            <div class="modal-body">
+                                                                                                <form id="entry-condition-form" class="row" onsubmit="EntryConditionCreate(event)">
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;">
+                                                                                                            <label class="form-label"><strong>Indicator 1</strong></label>
+                                                                                                            <div class="form-group">
+                                                                                                                <select id="indicator-one-entry" name="Ind1" class="form-control">
+
+                                                                                                                </select>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>Operator</strong></label>
+                                                                                                            <select name="ops" class="form-control" id="Operator">
+                                                                                                                <option value="&lt;">&lt;</option>
+                                                                                                                <option value=">">></option>
+                                                                                                                <option value="&lt;==">&lt;=</option>
+                                                                                                                <option value=">=">>=</option>
+                                                                                                                <option value="=">=</option>
+                                                                                                                <option value="crossAbove">Cross Above</option>
+                                                                                                                <option value="crossBelow">Cross Below</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;">
+                                                                                                            <label class="form-label"><strong>Indicator 2</strong></label>
+                                                                                                            <div class="form-group">
+                                                                                                                <select id="indicator-two-entry" name="Ind2" class="form-control">
+
+                                                                                                                </select>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col form-group">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>Offset 1</strong></label>
+                                                                                                            <input type="number" step="1" min="1" class="form-control" id="cand1" name="cand1" required="true">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col form-group">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>Offset 2</strong></label>
+                                                                                                            <input type="number" step="1" min="1" class="form-control" id="cand2" name="cand2" required="true">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>And/Or</strong></label>
+                                                                                                            <select class="form-control" name="andOr" id="andor">
+                                                                                                                <option value="-">-</option>
+                                                                                                                <option value="and">AND</option>
+                                                                                                                <option value="or">OR</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                                                <button type="submit" class="btn btn-primary">Add Condition</button>
+                                                                                            </div>
+                                                                                            </form>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -621,6 +647,9 @@
                                                         </section>
                                                     </div>
                                                 </div>
+
+
+
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3"></div>
@@ -628,35 +657,146 @@
                                                             <div class="container">
                                                                 <div class="row mt-4">
                                                                     <div class="col">
-                                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Stoploss</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Target</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Trail by</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
-                                                                    </div>
-                                                                    <div class="col">
-                                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>If Price Increases by</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1" style="padding-bottom: 0px;height: 38px;margin-bottom: -1px;"></div>
+                                                                        <div class="card shadow-sm mb-2 db-graph">
+                                                                            <div class="card-header p-2" style="background: var(--bs-blue);">
+                                                                                <h6 class="text-white m-0 font-md">CONDITIONS FOR EXIT</h6>
+                                                                            </div>
+                                                                            <div class="card-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="box-bg" id="table-holder">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-2 col-xl-2 align-self-center font-md text-dark-blue">
+                                                                                                <label class="col-form-label p-0" for="table-no"><strong>Conditions:</strong>
+                                                                                                    <br>
+                                                                                                </label>
+                                                                                            </div>
+                                                                                            <div class="col d-flex justify-content-end">
+                                                                                                <div class="col-md-2 col-xl-2 offset-md-3 offset-xl-4 align-self-center">
+                                                                                                    <button class="btn btn-info btn-sm d-block add-row btn-xs" data-bs-toggle="modal" data-bs-target="#exitConditionBuilder" type="button" style="background: var(--bs-blue);"><i class="fa fa-plus" style="color: white;"></i><strong class="ms-1" style="color: white;">Add Condition</strong></button>
+                                                                                                </div>
+                                                                                                <div class="col-md-1 col-xl-1 align-self-center">
+                                                                                                    <button id="delete-button-exit" class="btn btn-danger btn-sm d-block delete-row btn-xs" type="button"><strong>Delete</strong><i class="fa fa-trash-o"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="table-responsive tbl-wfx mt-4 kot-table" style="width: auto;">
+                                                                                            <table class="table table-sm" id="exit-condition-table">
+                                                                                                <thead class="text-dark font-md" id="exit-condition-table-head">
+                                                                                                    <tr class="text-dark-blue">
+                                                                                                        <th class="text-center w-3x"><strong>#</strong></th>
+                                                                                                        <th><strong>Indicator 1</strong></th>
+                                                                                                        <th><strong>Operator</strong></th>
+                                                                                                        <th><strong>Indicator 2</strong></th>
+                                                                                                        <th class="w-10x px-0"><strong>Offset1</strong></th>
+                                                                                                        <th class="w-10x px-0"><strong>Offset2</strong></th>
+                                                                                                        <th class="w-10x"><strong>And/Or</strong></th>
+
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody id="exit-condition-table-body" class="h-15x">
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="modal fade" id="exitConditionBuilder" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                                    <div class="modal-dialog modal-xl">
+                                                                                        <div class="modal-content">
+                                                                                            <div class="modal-header">
+                                                                                                <h1 class="modal-title fs-5 m-0" id="staticBackdropLabel">Create Condition</h1>
+                                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                            </div>
+                                                                                            <div class="modal-body">
+                                                                                                <form id="exit-condition-form" class="row" onsubmit="ExitConditionCreate(event)">
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;">
+                                                                                                            <label class="form-label"><strong>Indicator 1</strong></label>
+                                                                                                            <div class="form-group">
+                                                                                                                <select id="indicator-one-exit" name="Ind1" class="form-control">
+
+                                                                                                                </select>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>Operator</strong></label>
+                                                                                                            <select name="ops" class="form-control" id="Operator">
+                                                                                                                <option value="&lt;">&lt;</option>
+                                                                                                                <option value=">">></option>
+                                                                                                                <option value="&lt;=">&lt;=</option>
+                                                                                                                <option value=">=">>=</option>
+                                                                                                                <option value="==">=</option>
+                                                                                                                <option value="crossAbove">Cross Above</option>
+                                                                                                                <option value="crossBelow">Cross Below</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3" style="margin-bottom: -8px;padding-bottom: 0px;">
+                                                                                                            <label class="form-label"><strong>Indicator 2</strong></label>
+                                                                                                            <div class="form-group">
+                                                                                                                <select id="indicator-two-exit" name="Ind2" class="form-control">
+
+                                                                                                                </select>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col form-group">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>Offset 1</strong></label>
+                                                                                                            <input type="number" step="1" min="1" class="form-control" id="cand1" name="cand1" required="true">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col form-group">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>Offset 2</strong></label>
+                                                                                                            <input type="number" step="1" min="1" class="form-control" id="cand2" name="cand2" required="true">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col">
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label"><strong>And/Or</strong></label>
+                                                                                                            <select class="form-control" name="andOr" id="andor">
+                                                                                                                <option value="-">-</option>
+                                                                                                                <option value="and">AND</option>
+                                                                                                                <option value="or">OR</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                                                <button type="submit" class="btn btn-primary">Add Condition</button>
+                                                                                            </div>
+                                                                                            </form>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </section>
                                                     </div>
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Start Backtest</button></div>
-                                            </form>
+                                                <div class="m-3">
+                                                    <button class="btn btn-primary btn-sm" onclick="backtest()" type="submit">Start Backtest</button>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2024</span></div>
+                    <div class="text-center my-auto copyright"><span>Copyright © Aviral-Rishabh 2024</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
