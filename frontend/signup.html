@@ -1,0 +1,612 @@
+<!-- <h1>Sign In</h1>
+
+<form action="/users/create-session" method="POST">
+    <input type="email" name="email" placeholder="Email"  required>
+    <input type="password" name="password" placeholder="Password"  required>
+    <input type="submit" value="Sign In">
+
+</form> -->
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="photo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        canvas {
+            background-color: rgb(247, 247, 247);
+
+        }
+
+        .container {
+            background-color: aqua;
+            position: absolute !important;
+            top: 20vh;
+            left: 25vw;
+
+            z-index: 2;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background: linear-gradient(to right, #9ba29b, #101110); */
+            /* background-image: url(""); */
+            /* {% comment %} background-image: url("../img/background/black-background-04-coolbackgrounds.png"); {% endcomment %} */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            margin: -20px 0 50px;
+        }
+
+        h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 20px 0 30px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        button {
+            border-radius: 20px;
+            border: 1px solid #060706;
+            background-color: #0d6efd;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button.ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .container.right-panel-active .sign-in-container {
+            transform: translateX(100%);
+        }
+
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        @keyframes show {
+
+            0%,
+            49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 100;
+        }
+
+        .container.right-panel-active .overlay-container {
+            transform: translateX(-100%);
+        }
+
+        .overlay {
+            background: #FF416C;
+            background: -webkit-linear-gradient(to right, #060606, #3f403f);
+            background: linear-gradient(to right, #070807, #373937);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #FFFFFF;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .container.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .container.right-panel-active .overlay-left {
+            transform: translateX(0);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container.right-panel-active .overlay-right {
+            transform: translateX(20%);
+        }
+
+        .social-container {
+            margin: 20px 0;
+        }
+
+        .social-container a {
+            border: 1px solid #DDDDDD;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            font-size: 14px;
+            bottom: 0;
+            position: fixed;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 999;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer i {
+            color: red;
+        }
+
+        footer a {
+            color: #3c97bf;
+            text-decoration: none;
+        }
+    </style>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SignIN</title>
+    <link rel="stylesheet" type="text/css" href="userlogin.css">
+</head>
+
+<body>
+    <canvas id="nokey" width="800" height="800">
+        Your Browser Don't Support Canvas, Please Download Chrome ^_^``
+    </canvas>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="/users/create-session" method="POST">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" name="email" required />
+                <input type="password" placeholder="Password" name="password" required />
+                <button type="submit" value="Sign In">Sign In</button>
+            </form>
+
+
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right"
+                    style="background-image: linear-gradient(to right, rgb(104, 82, 228) , rgb(32, 4, 135));">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <a href="login.html"><button class="ghost" id="signUp">Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var canvas = document.getElementById('nokey'),
+            can_w = parseInt(canvas.getAttribute('width')),
+            can_h = parseInt(canvas.getAttribute('height')),
+            ctx = canvas.getContext('2d');
+
+        // console.log(typeof can_w);
+        var BALL_NUM = 50
+
+        var ball = {
+            x: 0,
+            y: 0,
+            vx: 0,
+            vy: 0,
+            r: 0,
+            alpha: 1,
+            phase: 0
+        },
+            ball_color = {
+                r: 0,
+                g: 0,
+                b: 255
+            },
+            R = 2,
+            balls = [],
+            alpha_f = 0.03,
+            alpha_phase = 0,
+
+            // Line
+            link_line_width = 0.8,
+            dis_limit = 260,
+            add_mouse_point = true,
+            mouse_in = false,
+            mouse_ball = {
+                x: 0,
+                y: 0,
+                vx: 0,
+                vy: 0,
+                r: 0,
+                type: 'mouse'
+            };
+
+        // Random speed
+        function getRandomSpeed(pos) {
+            var min = -1,
+                max = 1;
+            switch (pos) {
+                case 'top':
+                    return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+                    break;
+                case 'right':
+                    return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+                    break;
+                case 'bottom':
+                    return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+                    break;
+                case 'left':
+                    return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+                    break;
+                default:
+                    return;
+                    break;
+            }
+        }
+        function randomArrayItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+        function randomNumFrom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        console.log(randomNumFrom(0, 10));
+        // Random Ball
+        function getRandomBall() {
+            var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
+            switch (pos) {
+                case 'top':
+                    return {
+                        x: randomSidePos(can_w),
+                        y: -R,
+                        vx: getRandomSpeed('top')[0],
+                        vy: getRandomSpeed('top')[1],
+                        r: R,
+                        alpha: 1,
+                        phase: randomNumFrom(0, 10)
+                    }
+                    break;
+                case 'right':
+                    return {
+                        x: can_w + R,
+                        y: randomSidePos(can_h),
+                        vx: getRandomSpeed('right')[0],
+                        vy: getRandomSpeed('right')[1],
+                        r: R,
+                        alpha: 1,
+                        phase: randomNumFrom(0, 10)
+                    }
+                    break;
+                case 'bottom':
+                    return {
+                        x: randomSidePos(can_w),
+                        y: can_h + R,
+                        vx: getRandomSpeed('bottom')[0],
+                        vy: getRandomSpeed('bottom')[1],
+                        r: R,
+                        alpha: 1,
+                        phase: randomNumFrom(0, 10)
+                    }
+                    break;
+                case 'left':
+                    return {
+                        x: -R,
+                        y: randomSidePos(can_h),
+                        vx: getRandomSpeed('left')[0],
+                        vy: getRandomSpeed('left')[1],
+                        r: R,
+                        alpha: 1,
+                        phase: randomNumFrom(0, 10)
+                    }
+                    break;
+            }
+        }
+        function randomSidePos(length) {
+            return Math.ceil(Math.random() * length);
+        }
+
+        // Draw Ball
+        function renderBalls() {
+            Array.prototype.forEach.call(balls, function (b) {
+                if (!b.hasOwnProperty('type')) {
+                    ctx.fillStyle = 'rgba(' + ball_color.r + ',' + ball_color.g + ',' + ball_color.b + ',' + b.alpha + ')';
+                    ctx.beginPath();
+                    ctx.arc(b.x, b.y, R, 0, Math.PI * 2, true);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            });
+        }
+
+        // Update balls
+        function updateBalls() {
+            var new_balls = [];
+            Array.prototype.forEach.call(balls, function (b) {
+                b.x += b.vx;
+                b.y += b.vy;
+
+                if (b.x > -(50) && b.x < (can_w + 50) && b.y > -(50) && b.y < (can_h + 50)) {
+                    new_balls.push(b);
+                }
+
+                // alpha change
+                b.phase += alpha_f;
+                b.alpha = Math.abs(Math.cos(b.phase));
+                // console.log(b.alpha);
+            });
+
+            balls = new_balls.slice(0);
+        }
+
+        // loop alpha
+        function loopAlphaInf() {
+
+        }
+
+        // Draw lines
+        function renderLines() {
+            var fraction, alpha;
+            for (var i = 0; i < balls.length; i++) {
+                for (var j = i + 1; j < balls.length; j++) {
+
+                    fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+
+                    if (fraction < 1) {
+                        alpha = (1 - fraction).toString();
+
+                        ctx.strokeStyle = 'rgba(0,0,200,' + alpha + ')';
+                        ctx.lineWidth = link_line_width;
+
+                        ctx.beginPath();
+                        ctx.moveTo(balls[i].x, balls[i].y);
+                        ctx.lineTo(balls[j].x, balls[j].y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+            }
+        }
+
+        // calculate distance between two points
+        function getDisOf(b1, b2) {
+            var delta_x = Math.abs(b1.x - b2.x),
+                delta_y = Math.abs(b1.y - b2.y);
+
+            return Math.sqrt(delta_x * delta_x + delta_y * delta_y);
+        }
+
+        // add balls if there a little balls
+        function addBallIfy() {
+            if (balls.length < BALL_NUM) {
+                balls.push(getRandomBall());
+            }
+        }
+
+        // Render
+        function render() {
+            ctx.clearRect(0, 0, can_w, can_h);
+
+            renderBalls();
+
+            renderLines();
+
+            updateBalls();
+
+            addBallIfy();
+
+            window.requestAnimationFrame(render);
+        }
+
+        // Init Balls
+        function initBalls(num) {
+            for (var i = 1; i <= num; i++) {
+                balls.push({
+                    x: randomSidePos(can_w),
+                    y: randomSidePos(can_h),
+                    vx: getRandomSpeed('top')[0],
+                    vy: getRandomSpeed('top')[1],
+                    r: R,
+                    alpha: 1,
+                    phase: randomNumFrom(0, 10)
+                });
+            }
+        }
+        // Init Canvas
+        function initCanvas() {
+            canvas.setAttribute('width', window.innerWidth);
+            canvas.setAttribute('height', window.innerHeight);
+
+            can_w = parseInt(canvas.getAttribute('width'));
+            can_h = parseInt(canvas.getAttribute('height'));
+        }
+        window.addEventListener('resize', function (e) {
+            console.log('Window Resize...');
+            initCanvas();
+        });
+
+        function goMovie() {
+            initCanvas();
+            initBalls(BALL_NUM);
+            window.requestAnimationFrame(render);
+        }
+        goMovie();
+
+        // Mouse effect
+        canvas.addEventListener('mouseenter', function () {
+            console.log('mouseenter');
+            mouse_in = true;
+            balls.push(mouse_ball);
+        });
+        canvas.addEventListener('mouseleave', function () {
+            console.log('mouseleave');
+            mouse_in = false;
+            var new_balls = [];
+            Array.prototype.forEach.call(balls, function (b) {
+                if (!b.hasOwnProperty('type')) {
+                    new_balls.push(b);
+                }
+            });
+            balls = new_balls.slice(0);
+        });
+        canvas.addEventListener('mousemove', function (e) {
+            var e = e || window.event;
+            mouse_ball.x = e.pageX;
+            mouse_ball.y = e.pageY;
+            // console.log(mouse_ball);
+        });
+    </script>
+
+
+</body>

@@ -272,6 +272,11 @@ const indicatorMap = {
 
 
 function backtest(){
+    const rm = document.getElementById('backtest');
+    const load = document.getElementById('backtest1');
+    const report = document.getElementById('backtest2');
+    load.classList.remove("d-none");
+    rm.classList.add('d-none')
     state.strategy.indicators=[];
     state.indicators.forEach(indicator => {
         state.strategy.indicators.push(indicator);
@@ -316,7 +321,7 @@ function backtest(){
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(state.strategy) 
+        body: JSON.stringify({"data_setting":{"symbol":"SBIN","time_period":"1m","quantity":"5","start_date":"2024-06-01","end_date":"2024-06-04"},"indicators":[{"indicatorType":"RSI","indicatorName":"rishabh","length":"12","indicatorString":"ta.rsi(close,12)"},{"indicatorType":"SUPERTREND","indicatorName":"aviral","length":"10","multiplier":"4","indicatorString":"ta.supertrend(high,low,close,10,4)"},{"indicatorType":"TSI","indicatorName":"rishabh2","fast":"12","slow":"14","signal":"15","indicatorString":"ta.tsi(close,12,14,15)[ta.tsi(close,12,14,15).keys()[0]]"},{"indicatorType":"MACD","indicatorName":"aviral2","fast":"90","slow":"91","signal":"92","indicatorString":"ta.macd(close,90,91,92)[ta.macd(close,90,91,92).keys()[0]]"},{"indicatorType":"EMA","indicatorName":"lessGo","length":"12","indicatorString":"ta.ema(close,12)"}],"entry_conditions":{"Ind1":["ta.ema(close,12)"],"ops":["crossAbove"],"Ind2":["ta.tsi(close,12,14,15)[ta.tsi(close,12,14,15).keys()[0]]"],"cand1":["2"],"cand2":["3"],"andOr":["-"]},"exit_conditions":{"Ind1":["ta.tsi(close,12,14,15)[ta.tsi(close,12,14,15).keys()[0]]"],"ops":["=="],"Ind2":["ta.rsi(close,12)"],"cand1":["4"],"cand2":["8"],"andOr":["-"]},"strategy_details":{"entry_type":"BUY","trading_type":"Delivery","entry_time":"","exit_time":"","Instrument_type":"FUTURES","moneyness":"","expiry_type":"cm","stoploss":"0.001","target":"0.001","trail": 0.01,"price_increases":0.01},"name":"check"}) 
     };
     
     // Sending the request
@@ -328,7 +333,10 @@ function backtest(){
             return response.json();
         })
         .then(data => {
-            console.log('Success:', data);
+            load.classList.add("d-none");
+            report.classList.remove('d-none');
+            sessionStorage.setItem("report_data", JSON.stringify(data));
+            window.location.href = "report.html" ;
         })
         .catch(error => {
             console.error('Error:', error);
