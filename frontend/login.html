@@ -1,17 +1,4 @@
-<!-- <h1>Sign Up</h1>
-
-<form action="/users/create" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-    <input type="submit" value="Sign Up">
-
-</form>
- -->
-
-
- <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Get Started</title>
@@ -298,43 +285,43 @@
         Your Browser Don't Support Canvas, Please Download Chrome ^_^``
     </canvas>
 
-    <div class="container " id="signUp">
+    <div class="container  d-none" id="signUp">
+        <div class="form-container sign-in-container m-2">
+            <form name="sign-up" id="form-sign-up" >
+                <h1>Sign up</h1>
+                <input class="rounded-4"  type="text" placeholder="Name" name="name" id="username-sign-up"  />
+                <input class="rounded-4" type="email" placeholder="Email" name="email" id="email-sign-up"  />
+                <input class="rounded-4" type="password" placeholder="Password" name="password" id="password-sign-up"  />
+                <input class="rounded-4" type="password" name="confirm_password" placeholder="Confirm Password" id="confirm-password-sign-up" /> <br>
+                <button type="button" id="button-sign-up" value="Sign Up">Sign Up</button>
+                <hr><button type="button" id="google-button-1"  class="btn btn-primary d-block btn-google btn-user"><i class="fab fa-google"></i>&nbsp; Continue with Google</button><hr>
+            </form>
+        </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-right"
                     style="background-image: linear-gradient(to right, rgb(55, 16, 87) , rgb(33, 21, 76));">
                     <h1>Welcome to Tradzy!</h1>
                     <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" onclick="getLogin()">Log In</button>
+                    <button type="button" id="login-toggle" class="ghost">Sign In</button>
                 </div>
             </div>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action=''>
-                <h1>Sign up</h1>
-                <input type="text" placeholder="Name" name="name" id="username" required />
-                <input type="email" placeholder="Email" name="email" id="email" required />
-                <input type="password" placeholder="Password" name="password" id="password" required />
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required /> <br>
-                <button type="submit" value="Sign Up">Sign Up</button>
-                <hr><a class="btn btn-primary d-block btn-google btn-user  mb-2" role="button"><i class="fab fa-google"></i>&nbsp; Continue with Google</a><hr>
-                
-            </form>
         </div>
         
     </div>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-        <div class="container d-none" id="login">
+        <div class="container" id="login">
             <div class="form-container sign-in-container">
-                <form action="">
+                <form  name="log-in" id="form-sign-in" action="">
                     <h1>Sign in</h1>
-                    <input type="email" placeholder="Email" name="email" required />
-                    <input type="password" placeholder="Password" name="password" required />
-                    <a href="index.html"><button value="Sign In">Sign In</button></a>
-                    <hr><a class="btn btn-primary d-block btn-google btn-user  mb-2" role="button"><i class="fab fa-google"></i>&nbsp; Continue with Google</a><hr>
-                </form>
+                    <input class="rounded-4" type="email" placeholder="Email" name="email" id="email-sign-in"  />
+                    <input class="rounded-4" type="password" placeholder="Password" name="password" id="password-sign-in"  />
+                    <button type="button" class="mt-2" id="button-sign-in"  value="Sign In">Sign In</button>
+                <hr><button id="google-button-2" class="btn btn-primary d-block btn-google btn-user  mb-2" type="button"><i class="fab fa-google"></i> Continue with Google</button><hr>
+            </form>
+            
             </div>
             <div class="overlay-container">
                 <div class="overlay">
@@ -342,7 +329,7 @@
                         style="background-image: linear-gradient(to right,  rgb(55, 16, 87) , rgb(33, 21, 76));">
                         <h1>Hello, Trader!</h1>
                         <p>Enter your personal details and start journey with us</p>
-                        <button class="ghost" onclick="getSignup()">Sign Up</button>
+                        <button class="ghost" id="signup-toggle"  type="button"  >Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -623,5 +610,5 @@
                 // console.log(mouse_ball);
             });
         </script>
-        <script src="login-js.js"></script>
+        <script type="module" src="login-js.js" defer></script>
 </body>
