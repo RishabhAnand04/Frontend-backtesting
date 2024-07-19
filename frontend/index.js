@@ -6,6 +6,9 @@ var state = {
   reports: [],
 };
 const email_id = JSON.parse(window.sessionStorage.getItem("userEmail"));
+if (email_id === null || email_id == "") {
+  window.location.href = "login.html";
+}
 async function getUserStrategies() {
   const options = {
     method: "POST",

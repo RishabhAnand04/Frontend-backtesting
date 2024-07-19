@@ -6,6 +6,9 @@ var state = {
   strategies: [],
 };
 state.email_id = JSON.parse(window.sessionStorage.getItem("userEmail"));
+if (state.email_id === null || state.email_id == "") {
+  window.location.href = "login.html";
+}
 state.strategy_name = JSON.parse(window.sessionStorage.getItem("strategyName"));
 
 async function getReportData() {
@@ -81,6 +84,67 @@ async function getReportData() {
     });
 }
 
+async function getStrategyData() {
+  const url = "http://127.0.0.1:8000/strategyData";
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email_id: state.email_id,
+      strategy_name: state.strategy_name,
+    }),
+  };
+  fetch(url, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const modal = document.getElementById("strategy_details_modal");
+
+      let htmlContent = `<h5><b>Data Settings : </b></h5>`;
+      htmlContent += `<p>Symbol: ${data.data_setting.symbol}</p>`;
+      htmlContent += `<p>Start Date: ${data.data_setting.start_date}</p>`;
+      htmlContent += `<p>End Date: ${data.data_setting.end_date}</p>`;
+      htmlContent += `<p>Time Period: ${data.data_setting.time_period}</p>`;
+      htmlContent += `<p>Quantity: ${data.data_setting.quantity}</p>`;
+
+      htmlContent += `<h5 style="margin-top: 20px;"><b>Indicators : </b></h5>`;
+      data.indicators.forEach((indicator, index) => {
+        htmlContent += `<p>${index + 1}. ${indicator.indicatorName} (${
+          indicator.indicatorType
+        })</p>`;
+      });
+
+      htmlContent += `<h5 style="margin-top: 20px;"><b>Entry Conditions : </b></h5>`;
+      for (let i = 0; i < data.entry_conditions.ops.length; i++) {
+        htmlContent += `<p>${i + 1}) ${data.entry_conditions.Ind1[i]} ${
+          data.entry_conditions.ops[i]
+        } ${data.entry_conditions.Ind2[i]}, ${data.entry_conditions.cand1[i]} ${
+          data.entry_conditions.cand2[i]
+        }, ${data.entry_conditions.andOr[i]}.</p>`;
+      }
+
+      htmlContent += `<h5 style="margin-top: 20px;"><b>Exit Conditions :</b> </h5>`;
+      for (let i = 0; i < data.exit_conditions.ops.length; i++) {
+        htmlContent += `<p>${i + 1}) ${data.exit_conditions.Ind1[i]} ${
+          data.exit_conditions.ops[i]
+        } ${data.exit_conditions.Ind2[i]}, ${data.exit_conditions.cand1[i]} ${
+          data.exit_conditions.cand2[i]
+        }, ${data.exit_conditions.andOr[i]}.</p>`;
+      }
+      // Set the innerHTML of the modal
+      modal.innerHTML = htmlContent;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
 async function getUserDetails() {
   const options = {
     method: "POST",
@@ -105,6 +169,7 @@ userData.then((data) => {
 });
 
 getReportData();
+getStrategyData();
 
 async function getUserStrategies() {
   const options = {

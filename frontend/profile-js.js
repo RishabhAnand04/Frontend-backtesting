@@ -289,240 +289,245 @@ const stock_data = [
   "IDEA-EQ",
   "TECHM-EQ",
 ];
+
 const indicatorMap = {
   EMA: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: -1,
+    accronym: "ta.ema",
   },
   HMA: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: -1,
+    accronym: "ta.hma",
   },
   SMA: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: -1,
+    accronym: "ta.sma",
   },
   RSI: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: -1,
+    accronym: "ta.rsi",
   },
   SUPERTREND: {
     fieldsCount: 2,
     fields: ["length", "multiplier"],
     defaultString: ["high", "low", "close"],
     keys: -1,
+    accronym: "ta.supertrend",
   },
   ADX: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low", "close"],
     keys: -1,
+    accronym: "ta.adx",
   },
   BBANDS_UPPER: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: 2,
+    accronym: "ta.bbands",
   },
   BBANDS_LOWER: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: 0,
+    accronym: "ta.bbands",
   },
   ATR: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low", "close"],
     keys: -1,
+    accronym: "ta.atr",
   },
   MACD: {
     fieldsCount: 3,
     fields: ["fast", "slow", "signal"],
     defaultString: ["close"],
     keys: 0,
+    accronym: "ta.macd",
   },
   MACD_H: {
     fieldsCount: 3,
     fields: ["fast", "slow", "signal"],
     defaultString: ["close"],
     keys: 1,
+    accronym: "ta.macd",
   },
   MACDS: {
     fieldsCount: 3,
     fields: ["fast", "slow", "signal"],
     defaultString: ["close"],
     keys: 2,
+    accronym: "ta.macd",
   },
   VWAP: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["high", "low", "close", "volume"],
     keys: -1,
+    accronym: "ta.vwap",
   },
   VALUE: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["float()"],
     keys: -1,
+    accronym: "period",
   },
   CLOSE: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["close"],
     keys: -1,
+    accronym: "",
   },
   OPEN: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["open"],
     keys: -1,
+    accronym: "",
   },
   HIGH: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["high"],
     keys: -1,
+    accronym: "",
   },
   LOW: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["low"],
     keys: -1,
+    accronym: "",
   },
-  // LTP: {
-  //     fieldsCount: 0,
-  //     fields: [],
-  //     defaultString: '-' ,
-  // keys : -1
-  // },
   VOLUME: {
     fieldsCount: 0,
     fields: [],
     defaultString: ["volume"],
     keys: -1,
+    accronym: "",
   },
-  // HL2: {
-  //     fieldsCount: 0,
-  //     fields: [],
-  //     defaultString: '-',
-  // keys : -1
-  // },
-  // HL3: {
-  //     fieldsCount: 0,
-  //     fields: [],
-  //     defaultString: '-',
-  // keys : -1
-  // },
-  // PREV_DAY_HIGH: {
-  //     fieldsCount: 0,
-  //     fields: [],
-  //     defaultString: '-',
-  // keys : -1
-  // },
-  // PREV_DAY_LOW: {
-  //     fieldsCount: 0,
-  //     fields: [],
-  //     defaultString: '-',
-  // keys : -1
-  // },
   STOCH_K: {
     fieldsCount: 3,
     fields: ["k", "d"],
     defaultString: ["high", "low", "close"],
     keys: 0,
+    accronym: "ta.stoch",
   },
   STOCH_D: {
     fieldsCount: 3,
     fields: ["k", "d"],
     defaultString: ["high", "low", "close"],
     keys: 1,
+    accronym: "ta.stoch",
   },
   CCI: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low", "close"],
     keys: -1,
+    accronym: "ta.cci",
   },
   MFI: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low", "close", "volume"],
     keys: -1,
+    accronym: "ta.mfi",
   },
   CMF: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low", "close", "volume"],
     keys: -1,
+    accronym: "ta.cmf",
   },
   ROC: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["close"],
     keys: -1,
+    accronym: "ta.roc",
   },
   AROON_DOWN: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low"],
     keys: 0,
+    accronym: "ta.aroon",
   },
   AROON_UP: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low"],
     keys: 1,
+    accronym: "ta.aroon",
   },
   AROON_OSCILLATOR: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low"],
     keys: 2,
+    accronym: "ta.aroon",
   },
   WILLR: {
     fieldsCount: 1,
     fields: ["length"],
     defaultString: ["high", "low", "close"],
     keys: -1,
+    accronym: "ta.willr",
   },
   TSI: {
     fieldsCount: 3,
     fields: ["fast", "slow", "signal"],
     defaultString: ["close"],
     keys: 0,
+    accronym: "ta.tsi",
   },
   TSI_SIGNAL: {
     fieldsCount: 3,
     fields: ["fast", "slow", "signal"],
     defaultString: ["close"],
     keys: 1,
+    accronym: "ta.tsi",
   },
   PSAR_ABOVE: {
     fieldsCount: 3,
     fields: ["af0", "af", "max_af"],
     defaultString: ["high", "low", "close"],
     keys: 0,
+    accronym: "ta.psar",
   },
   PSAR_BELOW: {
     fieldsCount: 3,
     fields: ["af0", "af", "max_af"],
     defaultString: ["high", "low", "close"],
     keys: 1,
+    accronym: "ta.psar",
   },
   CHOP: {
     fieldsCount: 3,
     fields: ["length", "atr_length", "ln"],
     defaultString: ["high", "low", "close"],
     keys: -1,
+    accronym: "ta.chop",
   },
 };
 
@@ -597,16 +602,21 @@ function backtest() {
     });
 }
 
-const url = "http://127.0.0.1:8000/allstrategies";
-const options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    email_id: "frizokin@gmail.com",
-  }),
-};
+const email = JSON.parse(window.sessionStorage.getItem("userEmail"));
+if (email === null || email == "") {
+  window.location.href = "login.html";
+} else {
+  const url = "http://127.0.0.1:8000/allstrategies";
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email_id: email,
+    }),
+  };
+}
 
 // Sending the request
 fetch(url, options)
@@ -768,8 +778,7 @@ function indicatorCreate(event) {
 
   const form = document.getElementById("indicator-form");
   const formData = new FormData(form);
-  var indicatorString = "ta.";
-  indicatorString = indicatorString.concat(indicatorType.toLowerCase());
+  var indicatorString = indicatorMap[indicatorType].accronym;
   indicatorString = indicatorString.concat("(");
   indicatorMap[indicatorType].defaultString.forEach((str) => {
     indicatorString = indicatorString.concat(str + ",");
