@@ -383,8 +383,8 @@ const indicatorMap = {
     accronym: "ta.vwap",
   },
   VALUE: {
-    fieldsCount: 0,
-    fields: [],
+    fieldsCount: 1,
+    fields: ["value"],
     defaultString: ["float()"],
     keys: -1,
     accronym: "period",
@@ -616,23 +616,23 @@ if (email === null || email == "") {
       email_id: email,
     }),
   };
+  fetch(url, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      state.user_details.strategies = data.strategies;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Backtesting Tool could not Fetch User data");
+    });
 }
 
 // Sending the request
-fetch(url, options)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
-    }
-    return response.json();
-  })
-  .then((data) => {
-    state.user_details.strategies = data.strategies;
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-    alert("Backtesting Tool could not Fetch User data");
-  });
 
 function saveName(event) {
   event.preventDefault();

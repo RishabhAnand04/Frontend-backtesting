@@ -1,614 +1,686 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Get Started</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <style>
-        canvas {
-            background-color: rgb(247, 247, 247);
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get Started</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"
+  />
+  <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+  <style>
+    canvas {
+      background-color: rgb(247, 247, 247);
+    }
 
-        }
+    .container {
+      background-color: aqua;
+      position: absolute !important;
+      top: 20vh;
+      left: 25vw;
 
-        .container {
-            background-color: aqua;
-            position: absolute !important;
-            top: 20vh;
-            left: 25vw;
+      z-index: 2;
+    }
 
-            z-index: 2;
-        }
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+    * {
+      box-sizing: border-box;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    body {
+      /* background: linear-gradient(to right, #9ba29b, #101110); */
+      /* background-image: url(""); */
+      /* {% comment %} background-image: url("../img/background/black-background-04-coolbackgrounds.png"); {% endcomment %} */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: "Montserrat", sans-serif;
+      height: 100vh;
+      margin: -20px 0 50px;
+    }
 
-        body {
-            /* background: linear-gradient(to right, #9ba29b, #101110); */
-            /* background-image: url(""); */
-            /* {% comment %} background-image: url("../img/background/black-background-04-coolbackgrounds.png"); {% endcomment %} */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: 'Montserrat', sans-serif;
-            height: 100vh;
-            margin: -20px 0 50px;
-        }
+    h1 {
+      font-weight: bold;
+      margin: 0;
+    }
 
-        h1 {
-            font-weight: bold;
-            margin: 0;
-        }
+    h2 {
+      text-align: center;
+    }
 
-        h2 {
-            text-align: center;
-        }
+    p {
+      font-size: 14px;
+      font-weight: 100;
+      line-height: 20px;
+      letter-spacing: 0.5px;
+      margin: 20px 0 30px;
+    }
 
-        p {
-            font-size: 14px;
-            font-weight: 100;
-            line-height: 20px;
-            letter-spacing: 0.5px;
-            margin: 20px 0 30px;
-        }
+    span {
+      font-size: 12px;
+    }
 
-        span {
-            font-size: 12px;
-        }
+    a {
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+      margin: 15px 0;
+    }
 
-        a {
-            color: #333;
-            font-size: 14px;
-            text-decoration: none;
-            margin: 15px 0;
-        }
+    button {
+      border-radius: 20px;
+      border: 1px solid rgb(62, 9, 105);
+      background-color: rgb(62, 9, 105);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 12px 45px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: transform 80ms ease-in;
+    }
 
-        button {
-            border-radius: 20px;
-            border: 1px solid rgb(62, 9, 105);
-            background-color: rgb(62, 9, 105);
-            color: #FFFFFF;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 12px 45px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: transform 80ms ease-in;
-        }
+    button:active {
+      transform: scale(0.95);
+    }
 
-        button:active {
-            transform: scale(0.95);
-        }
+    button:focus {
+      outline: none;
+    }
 
-        button:focus {
-            outline: none;
-        }
+    button.ghost {
+      background-color: transparent;
+      border-color: #ffffff;
+    }
 
-        button.ghost {
-            background-color: transparent;
-            border-color: #FFFFFF;
-        }
+    form {
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 50px;
+      height: 100%;
+      text-align: center;
+    }
 
-        form {
-            background-color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 50px;
-            height: 100%;
-            text-align: center;
-        }
+    input {
+      background-color: #eee;
+      border: none;
+      padding: 12px 15px;
+      margin: 8px 0;
+      width: 100%;
+    }
 
-        input {
-            background-color: #eee;
-            border: none;
-            padding: 12px 15px;
-            margin: 8px 0;
-            width: 100%;
-        }
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+      position: relative;
+      overflow: hidden;
+      width: 768px;
+      max-width: 100%;
+      min-height: 480px;
+    }
 
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-                0 10px 10px rgba(0, 0, 0, 0.22);
-            position: relative;
-            overflow: hidden;
-            width: 768px;
-            max-width: 100%;
-            min-height: 480px;
-        }
+    .form-container {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      transition: all 0.6s ease-in-out;
+    }
 
-        .form-container {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            transition: all 0.6s ease-in-out;
-        }
+    .sign-in-container {
+      left: 0;
+      width: 50%;
+      z-index: 2;
+    }
 
-        .sign-in-container {
-            left: 0;
-            width: 50%;
-            z-index: 2;
-        }
+    .container.right-panel-active .sign-in-container {
+      transform: translateX(100%);
+    }
 
-        .container.right-panel-active .sign-in-container {
-            transform: translateX(100%);
-        }
+    .sign-up-container {
+      left: 0;
+      width: 50%;
+      opacity: 0;
+      z-index: 1;
+    }
 
-        .sign-up-container {
-            left: 0;
-            width: 50%;
-            opacity: 0;
-            z-index: 1;
-        }
+    .container.right-panel-active .sign-up-container {
+      transform: translateX(100%);
+      opacity: 1;
+      z-index: 5;
+      animation: show 0.6s;
+    }
 
-        .container.right-panel-active .sign-up-container {
-            transform: translateX(100%);
-            opacity: 1;
-            z-index: 5;
-            animation: show 0.6s;
-        }
+    @keyframes show {
+      0%,
+      49.99% {
+        opacity: 0;
+        z-index: 1;
+      }
 
-        @keyframes show {
+      50%,
+      100% {
+        opacity: 1;
+        z-index: 5;
+      }
+    }
 
-            0%,
-            49.99% {
-                opacity: 0;
-                z-index: 1;
-            }
+    .overlay-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      transition: transform 0.6s ease-in-out;
+      z-index: 100;
+    }
 
-            50%,
-            100% {
-                opacity: 1;
-                z-index: 5;
-            }
-        }
+    .container.right-panel-active .overlay-container {
+      transform: translateX(-100%);
+    }
 
-        .overlay-container {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-            transition: transform 0.6s ease-in-out;
-            z-index: 100;
-        }
+    .overlay {
+      background: #ff416c;
+      background: -webkit-linear-gradient(to right, #060606, #3f403f);
+      background: linear-gradient(to right, #070807, #373937);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      color: #ffffff;
+      position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+    }
 
-        .container.right-panel-active .overlay-container {
-            transform: translateX(-100%);
-        }
+    .container.right-panel-active .overlay {
+      transform: translateX(50%);
+    }
 
-        .overlay {
-            background: #FF416C;
-            background: -webkit-linear-gradient(to right, #060606, #3f403f);
-            background: linear-gradient(to right, #070807, #373937);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0 0;
-            color: #FFFFFF;
-            position: relative;
-            left: -100%;
-            height: 100%;
-            width: 200%;
-            transform: translateX(0);
-            transition: transform 0.6s ease-in-out;
-        }
+    .overlay-panel {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 40px;
+      text-align: center;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+    }
 
-        .container.right-panel-active .overlay {
-            transform: translateX(50%);
-        }
+    .overlay-left {
+      transform: translateX(-20%);
+    }
 
-        .overlay-panel {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 40px;
-            text-align: center;
-            top: 0;
-            height: 100%;
-            width: 50%;
-            transform: translateX(0);
-            transition: transform 0.6s ease-in-out;
-        }
+    .container.right-panel-active .overlay-left {
+      transform: translateX(0);
+    }
 
-        .overlay-left {
-            transform: translateX(-20%);
-        }
+    .overlay-right {
+      right: 0;
+      transform: translateX(0);
+    }
 
-        .container.right-panel-active .overlay-left {
-            transform: translateX(0);
-        }
+    .container.right-panel-active .overlay-right {
+      transform: translateX(20%);
+    }
 
-        .overlay-right {
-            right: 0;
-            transform: translateX(0);
-        }
+    .social-container {
+      margin: 20px 0;
+    }
 
-        .container.right-panel-active .overlay-right {
-            transform: translateX(20%);
-        }
+    .social-container a {
+      border: 1px solid #dddddd;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5px;
+      height: 40px;
+      width: 40px;
+    }
 
-        .social-container {
-            margin: 20px 0;
-        }
+    footer {
+      background-color: #222;
+      color: #fff;
+      font-size: 14px;
+      bottom: 0;
+      position: fixed;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 999;
+    }
 
-        .social-container a {
-            border: 1px solid #DDDDDD;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 5px;
-            height: 40px;
-            width: 40px;
-        }
+    footer p {
+      margin: 10px 0;
+    }
 
-        footer {
-            background-color: #222;
-            color: #fff;
-            font-size: 14px;
-            bottom: 0;
-            position: fixed;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 999;
-        }
+    footer i {
+      color: red;
+    }
 
-        footer p {
-            margin: 10px 0;
-        }
-
-        footer i {
-            color: red;
-        }
-
-        footer a {
-            color: #3c97bf;
-            text-decoration: none;
-        }
-    </style>
-
+    footer a {
+      color: #3c97bf;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
-    <canvas id="nokey" width="800" height="800">
-        Your Browser Don't Support Canvas, Please Download Chrome ^_^``
-    </canvas>
+  <canvas id="nokey" width="800" height="800">
+    Your Browser Don't Support Canvas, Please Download Chrome ^_^``
+  </canvas>
 
-    <div class="container  d-none" id="signUp">
-        <div class="form-container sign-in-container m-2">
-            <form name="sign-up" id="form-sign-up" >
-                <h1>Sign up</h1>
-                <input class="rounded-4"  type="text" placeholder="Name" name="name" id="username-sign-up"  />
-                <input class="rounded-4" type="email" placeholder="Email" name="email" id="email-sign-up"  />
-                <input class="rounded-4" type="password" placeholder="Password" name="password" id="password-sign-up"  />
-                <input class="rounded-4" type="password" name="confirm_password" placeholder="Confirm Password" id="confirm-password-sign-up" /> <br>
-                <button type="button" id="button-sign-up" value="Sign Up">Sign Up</button>
-                <hr><button type="button" id="google-button-1"  class="btn btn-primary d-block btn-google btn-user"><i class="fab fa-google"></i>&nbsp; Continue with Google</button><hr>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-right"
-                    style="background-image: linear-gradient(to right, rgb(55, 16, 87) , rgb(33, 21, 76));">
-                    <h1>Welcome to Tradzy!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button type="button" id="login-toggle" class="ghost">Sign In</button>
-                </div>
-            </div>
-        </div>
-        
+  <div class="container d-none" id="signUp">
+    <div class="form-container sign-in-container m-2">
+      <form name="sign-up" id="form-sign-up">
+        <h1>Sign up</h1>
+        <input
+          class="rounded-4"
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="username-sign-up"
+        />
+        <input
+          class="rounded-4"
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email-sign-up"
+        />
+        <input
+          class="rounded-4"
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password-sign-up"
+        />
+        <input
+          class="rounded-4"
+          type="password"
+          name="confirm_password"
+          placeholder="Confirm Password"
+          id="confirm-password-sign-up"
+        />
+        <br />
+        <button type="button" id="button-sign-up" value="Sign Up"
+          >Sign Up</button
+        >
+        <hr /><button
+          type="button"
+          id="google-button-1"
+          class="btn btn-primary d-block btn-google btn-user"
+          ><i class="fab fa-google"></i>&nbsp; Continue with Google</button
+        ><hr />
+      </form>
     </div>
-
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-
-        <div class="container" id="login">
-            <div class="form-container sign-in-container">
-                <form  name="log-in" id="form-sign-in" action="">
-                    <h1>Sign in</h1>
-                    <input class="rounded-4" type="email" placeholder="Email" name="email" id="email-sign-in"  />
-                    <input class="rounded-4" type="password" placeholder="Password" name="password" id="password-sign-in"  />
-                    <button type="button" class="mt-2" id="button-sign-in"  value="Sign In">Sign In</button>
-                <hr><button id="google-button-2" class="btn btn-primary d-block btn-google btn-user  mb-2" type="button"><i class="fab fa-google"></i> Continue with Google</button><hr>
-            </form>
-            
-            </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-right"
-                        style="background-image: linear-gradient(to right,  rgb(55, 16, 87) , rgb(33, 21, 76));">
-                        <h1>Hello, Trader!</h1>
-                        <p>Enter your personal details and start journey with us</p>
-                        <button class="ghost" id="signup-toggle"  type="button"  >Sign Up</button>
-                    </div>
-                </div>
-            </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div
+          class="overlay-panel overlay-right"
+          style="
+            background-image: linear-gradient(
+              to right,
+              rgb(55, 16, 87),
+              rgb(33, 21, 76)
+            );
+          "
+        >
+          <h1>Welcome to Tradzy!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button type="button" id="login-toggle" class="ghost">Sign In</button>
         </div>
-    
-        <script>
-            var canvas = document.getElementById('nokey'),
-                can_w = parseInt(canvas.getAttribute('width')),
-                can_h = parseInt(canvas.getAttribute('height')),
-                ctx = canvas.getContext('2d');
+      </div>
+    </div>
+  </div>
 
-            // console.log(typeof can_w);
-            var BALL_NUM = 50
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-            var ball = {
-                x: 0,
-                y: 0,
-                vx: 0,
-                vy: 0,
-                r: 0,
-                alpha: 1,
-                phase: 0
-            },
-                ball_color = {
-                    r: 0,
-                    g: 0,
-                    b: 0
-                },
-                R = 2,
-                balls = [],
-                alpha_f = 0.03,
-                alpha_phase = 0,
+  <div class="container" id="login">
+    <div class="form-container sign-in-container">
+      <form name="log-in" id="form-sign-in" action="">
+        <h1>Sign in</h1>
+        <input
+          class="rounded-4"
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="email-sign-in"
+        />
+        <input
+          class="rounded-4"
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password-sign-in"
+        />
+        <button type="button" class="mt-2" id="button-sign-in" value="Sign In"
+          >Sign In</button
+        >
+        <hr /><button
+          id="google-button-2"
+          class="btn btn-primary d-block btn-google btn-user mb-2"
+          type="button"
+          ><i class="fab fa-google"></i> Continue with Google</button
+        ><hr />
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div
+          class="overlay-panel overlay-right"
+          style="
+            background-image: linear-gradient(
+              to right,
+              rgb(55, 16, 87),
+              rgb(33, 21, 76)
+            );
+          "
+        >
+          <h1>Welcome to Tradzy!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signup-toggle" type="button"
+            >Sign Up</button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 
-                // Line
-                link_line_width = 0.8,
-                dis_limit = 260,
-                add_mouse_point = true,
-                mouse_in = false,
-                mouse_ball = {
-                    x: 0,
-                    y: 0,
-                    vx: 0,
-                    vy: 0,
-                    r: 0,
-                    type: 'mouse'
-                };
+  <script>
+    var canvas = document.getElementById("nokey"),
+      can_w = parseInt(canvas.getAttribute("width")),
+      can_h = parseInt(canvas.getAttribute("height")),
+      ctx = canvas.getContext("2d");
 
-            // Random speed
-            function getRandomSpeed(pos) {
-                var min = -1,
-                    max = 1;
-                switch (pos) {
-                    case 'top':
-                        return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
-                        break;
-                    case 'right':
-                        return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
-                        break;
-                    case 'bottom':
-                        return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
-                        break;
-                    case 'left':
-                        return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
-                        break;
-                    default:
-                        return;
-                        break;
-                }
-            }
-            function randomArrayItem(arr) {
-                return arr[Math.floor(Math.random() * arr.length)];
-            }
-            function randomNumFrom(min, max) {
-                return Math.random() * (max - min) + min;
-            }
-            console.log(randomNumFrom(0, 10));
-            // Random Ball
-            function getRandomBall() {
-                var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
-                switch (pos) {
-                    case 'top':
-                        return {
-                            x: randomSidePos(can_w),
-                            y: -R,
-                            vx: getRandomSpeed('top')[0],
-                            vy: getRandomSpeed('top')[1],
-                            r: R,
-                            alpha: 1,
-                            phase: randomNumFrom(0, 10)
-                        }
-                        break;
-                    case 'right':
-                        return {
-                            x: can_w + R,
-                            y: randomSidePos(can_h),
-                            vx: getRandomSpeed('right')[0],
-                            vy: getRandomSpeed('right')[1],
-                            r: R,
-                            alpha: 1,
-                            phase: randomNumFrom(0, 10)
-                        }
-                        break;
-                    case 'bottom':
-                        return {
-                            x: randomSidePos(can_w),
-                            y: can_h + R,
-                            vx: getRandomSpeed('bottom')[0],
-                            vy: getRandomSpeed('bottom')[1],
-                            r: R,
-                            alpha: 1,
-                            phase: randomNumFrom(0, 10)
-                        }
-                        break;
-                    case 'left':
-                        return {
-                            x: -R,
-                            y: randomSidePos(can_h),
-                            vx: getRandomSpeed('left')[0],
-                            vy: getRandomSpeed('left')[1],
-                            r: R,
-                            alpha: 1,
-                            phase: randomNumFrom(0, 10)
-                        }
-                        break;
-                }
-            }
-            function randomSidePos(length) {
-                return Math.ceil(Math.random() * length);
-            }
+    // console.log(typeof can_w);
+    var BALL_NUM = 50;
 
-            // Draw Ball
-            function renderBalls() {
-                Array.prototype.forEach.call(balls, function (b) {
-                    if (!b.hasOwnProperty('type')) {
-                        ctx.fillStyle = 'rgba(' + ball_color.r + ',' + ball_color.g + ',' + ball_color.b + ',' + b.alpha + ')';
-                        ctx.beginPath();
-                        ctx.arc(b.x, b.y, R, 0, Math.PI * 2, true);
-                        ctx.closePath();
-                        ctx.fill();
-                    }
-                });
-            }
+    var ball = {
+        x: 0,
+        y: 0,
+        vx: 0,
+        vy: 0,
+        r: 0,
+        alpha: 1,
+        phase: 0,
+      },
+      ball_color = {
+        r: 0,
+        g: 0,
+        b: 0,
+      },
+      R = 2,
+      balls = [],
+      alpha_f = 0.03,
+      alpha_phase = 0,
+      // Line
+      link_line_width = 0.8,
+      dis_limit = 260,
+      add_mouse_point = true,
+      mouse_in = false,
+      mouse_ball = {
+        x: 0,
+        y: 0,
+        vx: 0,
+        vy: 0,
+        r: 0,
+        type: "mouse",
+      };
 
-            // Update balls
-            function updateBalls() {
-                var new_balls = [];
-                Array.prototype.forEach.call(balls, function (b) {
-                    b.x += b.vx;
-                    b.y += b.vy;
+    // Random speed
+    function getRandomSpeed(pos) {
+      var min = -1,
+        max = 1;
+      switch (pos) {
+        case "top":
+          return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+          break;
+        case "right":
+          return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+          break;
+        case "bottom":
+          return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+          break;
+        case "left":
+          return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+          break;
+        default:
+          return;
+          break;
+      }
+    }
+    function randomArrayItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+    function randomNumFrom(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    console.log(randomNumFrom(0, 10));
+    // Random Ball
+    function getRandomBall() {
+      var pos = randomArrayItem(["top", "right", "bottom", "left"]);
+      switch (pos) {
+        case "top":
+          return {
+            x: randomSidePos(can_w),
+            y: -R,
+            vx: getRandomSpeed("top")[0],
+            vy: getRandomSpeed("top")[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10),
+          };
+          break;
+        case "right":
+          return {
+            x: can_w + R,
+            y: randomSidePos(can_h),
+            vx: getRandomSpeed("right")[0],
+            vy: getRandomSpeed("right")[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10),
+          };
+          break;
+        case "bottom":
+          return {
+            x: randomSidePos(can_w),
+            y: can_h + R,
+            vx: getRandomSpeed("bottom")[0],
+            vy: getRandomSpeed("bottom")[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10),
+          };
+          break;
+        case "left":
+          return {
+            x: -R,
+            y: randomSidePos(can_h),
+            vx: getRandomSpeed("left")[0],
+            vy: getRandomSpeed("left")[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10),
+          };
+          break;
+      }
+    }
+    function randomSidePos(length) {
+      return Math.ceil(Math.random() * length);
+    }
 
-                    if (b.x > -(50) && b.x < (can_w + 50) && b.y > -(50) && b.y < (can_h + 50)) {
-                        new_balls.push(b);
-                    }
+    // Draw Ball
+    function renderBalls() {
+      Array.prototype.forEach.call(balls, function (b) {
+        if (!b.hasOwnProperty("type")) {
+          ctx.fillStyle =
+            "rgba(" +
+            ball_color.r +
+            "," +
+            ball_color.g +
+            "," +
+            ball_color.b +
+            "," +
+            b.alpha +
+            ")";
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, R, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fill();
+        }
+      });
+    }
 
-                    // alpha change
-                    b.phase += alpha_f;
-                    b.alpha = Math.abs(Math.cos(b.phase));
-                    // console.log(b.alpha);
-                });
+    // Update balls
+    function updateBalls() {
+      var new_balls = [];
+      Array.prototype.forEach.call(balls, function (b) {
+        b.x += b.vx;
+        b.y += b.vy;
 
-                balls = new_balls.slice(0);
-            }
+        if (b.x > -50 && b.x < can_w + 50 && b.y > -50 && b.y < can_h + 50) {
+          new_balls.push(b);
+        }
 
-            // loop alpha
-            function loopAlphaInf() {
+        // alpha change
+        b.phase += alpha_f;
+        b.alpha = Math.abs(Math.cos(b.phase));
+        // console.log(b.alpha);
+      });
 
-            }
+      balls = new_balls.slice(0);
+    }
 
-            // Draw lines
-            function renderLines() {
-                var fraction, alpha;
-                for (var i = 0; i < balls.length; i++) {
-                    for (var j = i + 1; j < balls.length; j++) {
+    // loop alpha
+    function loopAlphaInf() {}
 
-                        fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+    // Draw lines
+    function renderLines() {
+      var fraction, alpha;
+      for (var i = 0; i < balls.length; i++) {
+        for (var j = i + 1; j < balls.length; j++) {
+          fraction = getDisOf(balls[i], balls[j]) / dis_limit;
 
-                        if (fraction < 1) {
-                            alpha = (1 - fraction).toString();
+          if (fraction < 1) {
+            alpha = (1 - fraction).toString();
 
-                            ctx.strokeStyle = 'rgba(0,0,200,' + alpha + ')';
-                            ctx.lineWidth = link_line_width;
+            ctx.strokeStyle = "rgba(0,0,200," + alpha + ")";
+            ctx.lineWidth = link_line_width;
 
-                            ctx.beginPath();
-                            ctx.moveTo(balls[i].x, balls[i].y);
-                            ctx.lineTo(balls[j].x, balls[j].y);
-                            ctx.stroke();
-                            ctx.closePath();
-                        }
-                    }
-                }
-            }
+            ctx.beginPath();
+            ctx.moveTo(balls[i].x, balls[i].y);
+            ctx.lineTo(balls[j].x, balls[j].y);
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+    }
 
-            // calculate distance between two points
-            function getDisOf(b1, b2) {
-                var delta_x = Math.abs(b1.x - b2.x),
-                    delta_y = Math.abs(b1.y - b2.y);
+    // calculate distance between two points
+    function getDisOf(b1, b2) {
+      var delta_x = Math.abs(b1.x - b2.x),
+        delta_y = Math.abs(b1.y - b2.y);
 
-                return Math.sqrt(delta_x * delta_x + delta_y * delta_y);
-            }
+      return Math.sqrt(delta_x * delta_x + delta_y * delta_y);
+    }
 
-            // add balls if there a little balls
-            function addBallIfy() {
-                if (balls.length < BALL_NUM) {
-                    balls.push(getRandomBall());
-                }
-            }
+    // add balls if there a little balls
+    function addBallIfy() {
+      if (balls.length < BALL_NUM) {
+        balls.push(getRandomBall());
+      }
+    }
 
-            // Render
-            function render() {
-                ctx.clearRect(0, 0, can_w, can_h);
+    // Render
+    function render() {
+      ctx.clearRect(0, 0, can_w, can_h);
 
-                renderBalls();
+      renderBalls();
 
-                renderLines();
+      renderLines();
 
-                updateBalls();
+      updateBalls();
 
-                addBallIfy();
+      addBallIfy();
 
-                window.requestAnimationFrame(render);
-            }
+      window.requestAnimationFrame(render);
+    }
 
-            // Init Balls
-            function initBalls(num) {
-                for (var i = 1; i <= num; i++) {
-                    balls.push({
-                        x: randomSidePos(can_w),
-                        y: randomSidePos(can_h),
-                        vx: getRandomSpeed('top')[0],
-                        vy: getRandomSpeed('top')[1],
-                        r: R,
-                        alpha: 1,
-                        phase: randomNumFrom(0, 10)
-                    });
-                }
-            }
-            // Init Canvas
-            function initCanvas() {
-                canvas.setAttribute('width', window.innerWidth);
-                canvas.setAttribute('height', window.innerHeight);
+    // Init Balls
+    function initBalls(num) {
+      for (var i = 1; i <= num; i++) {
+        balls.push({
+          x: randomSidePos(can_w),
+          y: randomSidePos(can_h),
+          vx: getRandomSpeed("top")[0],
+          vy: getRandomSpeed("top")[1],
+          r: R,
+          alpha: 1,
+          phase: randomNumFrom(0, 10),
+        });
+      }
+    }
+    // Init Canvas
+    function initCanvas() {
+      canvas.setAttribute("width", window.innerWidth);
+      canvas.setAttribute("height", window.innerHeight);
 
-                can_w = parseInt(canvas.getAttribute('width'));
-                can_h = parseInt(canvas.getAttribute('height'));
-            }
-            window.addEventListener('resize', function (e) {
-                console.log('Window Resize...');
-                initCanvas();
-            });
+      can_w = parseInt(canvas.getAttribute("width"));
+      can_h = parseInt(canvas.getAttribute("height"));
+    }
+    window.addEventListener("resize", function (e) {
+      console.log("Window Resize...");
+      initCanvas();
+    });
 
-            function goMovie() {
-                initCanvas();
-                initBalls(BALL_NUM);
-                window.requestAnimationFrame(render);
-            }
-            goMovie();
+    function goMovie() {
+      initCanvas();
+      initBalls(BALL_NUM);
+      window.requestAnimationFrame(render);
+    }
+    goMovie();
 
-            // Mouse effect
-            canvas.addEventListener('mouseenter', function () {
-                console.log('mouseenter');
-                mouse_in = true;
-                balls.push(mouse_ball);
-            });
-            canvas.addEventListener('mouseleave', function () {
-                console.log('mouseleave');
-                mouse_in = false;
-                var new_balls = [];
-                Array.prototype.forEach.call(balls, function (b) {
-                    if (!b.hasOwnProperty('type')) {
-                        new_balls.push(b);
-                    }
-                });
-                balls = new_balls.slice(0);
-            });
-            canvas.addEventListener('mousemove', function (e) {
-                var e = e || window.event;
-                mouse_ball.x = e.pageX;
-                mouse_ball.y = e.pageY;
-                // console.log(mouse_ball);
-            });
-        </script>
-        <script type="module" src="login-js.js" defer></script>
+    // Mouse effect
+    canvas.addEventListener("mouseenter", function () {
+      console.log("mouseenter");
+      mouse_in = true;
+      balls.push(mouse_ball);
+    });
+    canvas.addEventListener("mouseleave", function () {
+      console.log("mouseleave");
+      mouse_in = false;
+      var new_balls = [];
+      Array.prototype.forEach.call(balls, function (b) {
+        if (!b.hasOwnProperty("type")) {
+          new_balls.push(b);
+        }
+      });
+      balls = new_balls.slice(0);
+    });
+    canvas.addEventListener("mousemove", function (e) {
+      var e = e || window.event;
+      mouse_ball.x = e.pageX;
+      mouse_ball.y = e.pageY;
+      // console.log(mouse_ball);
+    });
+  </script>
+  <script type="module" src="login-js.js" defer></script>
 </body>
