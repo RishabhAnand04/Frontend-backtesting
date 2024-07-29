@@ -38,6 +38,13 @@ async function getReportData() {
           element.innerHTML = data[key];
         }
       }
+      const reportData = document.getElementById("report-data");
+      const changeButton = document.getElementById("show-stratergies");
+      reportData.classList.replace("d-none", "d-block");
+      changeButton.classList.replace("d-none", "d-block");
+      const strategiesView = document.getElementById("view-stratergies");
+      strategiesView.style.display = "none";
+
       const name = document.getElementById("strategy_name");
       name.innerHTML = state.strategy_name;
       const ctx = document.getElementById("myChart");

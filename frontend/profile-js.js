@@ -86,6 +86,8 @@ var state = {
       cand1: [],
       cand2: [],
       andOr: [],
+      Ind1Name: [],
+      Ind2Name: [],
     },
     exit_conditions: {
       Ind1: [],
@@ -94,6 +96,8 @@ var state = {
       cand1: [],
       cand2: [],
       andOr: [],
+      Ind1Name: [],
+      Ind2Name: [],
     },
     strategy_details: {},
     name: "",
@@ -556,6 +560,8 @@ function backtest() {
     state.strategy.entry_conditions.cand1.push(condition.cand1);
     state.strategy.entry_conditions.cand2.push(condition.cand2);
     state.strategy.entry_conditions.andOr.push(condition.andOr);
+    state.strategy.entry_conditions.Ind1Name.push(condition.Ind1);
+    state.strategy.entry_conditions.Ind2Name.push(condition.Ind2);
   });
   state.strategy.exit_conditions = {
     Ind1: [],
@@ -572,6 +578,8 @@ function backtest() {
     state.strategy.exit_conditions.cand1.push(condition.cand1);
     state.strategy.exit_conditions.cand2.push(condition.cand2);
     state.strategy.exit_conditions.andOr.push(condition.andOr);
+    state.strategy.exit_conditions.Ind1Name.push(condition.Ind1);
+    state.strategy.exit_conditions.Ind2Name.push(condition.Ind2);
   });
 
   const url = "http://127.0.0.1:8000/strategies";
