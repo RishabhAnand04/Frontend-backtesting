@@ -316,9 +316,9 @@ const indicatorMap = {
   VALUE: {
     fieldsCount: 1,
     fields: ["value"],
-    defaultString: ["float()"],
+    defaultString: [""],
     keys: -1,
-    accronym: "period",
+    accronym: "",
   },
   CLOSE: {
     fieldsCount: 0,
