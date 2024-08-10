@@ -99,6 +99,8 @@ userData.then((data) => {
   credits.innerText = state.credits;
   const username = document.getElementById("username");
   username.innerText = state.username;
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  usernameDisplay.innerText = data.username;
 });
 const strategies = getUserStrategies();
 strategies.then((data) => {

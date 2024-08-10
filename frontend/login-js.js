@@ -102,6 +102,7 @@ signInButton.addEventListener("click", function () {
               "userEmail",
               JSON.stringify(user.email)
             );
+            alert("Sign In Successful");
             window.location.href = "index.html";
           }
         })
@@ -199,6 +200,7 @@ button1.addEventListener("click", function () {
                     "userEmail",
                     JSON.stringify(user.email)
                   );
+                  alert("Google Sign in successfull");
                   window.location.href = "index.html";
                 }
               })
@@ -210,6 +212,7 @@ button1.addEventListener("click", function () {
               "userEmail",
               JSON.stringify(user.email)
             );
+            alert("Google Sign in successfull");
             window.location.href = "index.html";
           }
         })
@@ -269,6 +272,7 @@ button2.addEventListener("click", function () {
                     "userEmail",
                     JSON.stringify(user.email)
                   );
+                  alert("Google Sign in successfull");
                   window.location.href = "index.html";
                 }
               })
@@ -280,6 +284,7 @@ button2.addEventListener("click", function () {
               "userEmail",
               JSON.stringify(user.email)
             );
+            alert("Google Sign in successfull");
             window.location.href = "index.html";
           }
         })

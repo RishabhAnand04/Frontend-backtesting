@@ -1,81 +1,7 @@
 var state = {
-  entry_conditions: [
-    {
-      Ind1: "rishabh",
-      ops: "==",
-      Ind2: "aviral",
-      cand1: "2",
-      cand2: "3",
-      andOr: "and",
-      Ind1String: "ta.rsi(close,12)",
-      Ind2String: "ta.supertrend(high,low,close,10,4)",
-    },
-    {
-      Ind1: "rishabh2",
-      ops: "crossAbove",
-      Ind2: "aviral2",
-      cand1: "2",
-      cand2: "4",
-      andOr: "-",
-      Ind1String: "ta.tsi(close,12,14,15)[ta.tsi(close,12,14,15).keys()[0]]",
-      Ind2String: "ta.macd(close,90,91,92)[ta.macd(close,90,91,92).keys()[0]]",
-    },
-  ],
-  exit_conditions: [
-    {
-      Ind1: "aviral2",
-      ops: ">",
-      Ind2: "aviral",
-      cand1: "5",
-      cand2: "6",
-      andOr: "or",
-      Ind1String: "ta.macd(close,90,91,92)[ta.macd(close,90,91,92).keys()[0]]",
-      Ind2String: "ta.supertrend(high,low,close,10,4)",
-    },
-    {
-      Ind1: "rishabh2",
-      ops: "==",
-      Ind2: "rishabh",
-      cand1: "4",
-      cand2: "8",
-      andOr: "-",
-      Ind1String: "ta.tsi(close,12,14,15)[ta.tsi(close,12,14,15).keys()[0]]",
-      Ind2String: "ta.rsi(close,12)",
-    },
-  ],
-  indicators: [
-    {
-      indicatorType: "RSI",
-      indicatorName: "rishabh",
-      length: "12",
-      indicatorString: "ta.rsi(close,12)",
-    },
-    {
-      indicatorType: "SUPERTREND",
-      indicatorName: "aviral",
-      length: "10",
-      multiplier: "4",
-      indicatorString: "ta.supertrend(high,low,close,10,4)",
-    },
-    {
-      indicatorType: "TSI",
-      indicatorName: "rishabh2",
-      fast: "12",
-      slow: "14",
-      signal: "15",
-      indicatorString:
-        "ta.tsi(close,12,14,15)[ta.tsi(close,12,14,15).keys()[0]]",
-    },
-    {
-      indicatorType: "MACD",
-      indicatorName: "aviral2",
-      fast: "90",
-      slow: "91",
-      signal: "92",
-      indicatorString:
-        "ta.macd(close,90,91,92)[ta.macd(close,90,91,92).keys()[0]]",
-    },
-  ],
+  entry_conditions: [],
+  exit_conditions: [],
+  indicators: [],
   strategy: {
     data_setting: {},
     indicators: [],
@@ -101,6 +27,7 @@ var state = {
     },
     strategy_details: {},
     name: "",
+    email_id: "",
   },
   user_details: {
     strategies: [],
@@ -535,6 +462,9 @@ const indicatorMap = {
   },
 };
 
+renderTable();
+populateSymbol("symbol", stock_data);
+
 function backtest() {
   const rm = document.getElementById("backtest");
   const load = document.getElementById("backtest1");
@@ -552,6 +482,8 @@ function backtest() {
     cand1: [],
     cand2: [],
     andOr: [],
+    Ind1Name: [],
+    Ind2Name: [],
   };
   state.entry_conditions.forEach((condition) => {
     state.strategy.entry_conditions.Ind1.push(condition.Ind1String);
@@ -570,6 +502,8 @@ function backtest() {
     cand1: [],
     cand2: [],
     andOr: [],
+    Ind1Name: [],
+    Ind2Name: [],
   };
   state.exit_conditions.forEach((condition) => {
     state.strategy.exit_conditions.Ind1.push(condition.Ind1String);
@@ -581,6 +515,9 @@ function backtest() {
     state.strategy.exit_conditions.Ind1Name.push(condition.Ind1);
     state.strategy.exit_conditions.Ind2Name.push(condition.Ind2);
   });
+  state.strategy.email_id = JSON.parse(
+    window.sessionStorage.getItem("userEmail")
+  );
 
   const url = "http://127.0.0.1:8000/strategies";
   const options = {
@@ -702,6 +639,7 @@ function populateSymbol(selectId, data) {
     selectElement.appendChild(option);
   });
 }
+
 function populateSelect(selectId, data) {
   const selectElement = document.getElementById(selectId);
   selectElement.innerHTML = "";
@@ -855,7 +793,7 @@ function populateTable(id, data) {
 
     // Create Operator cell
     const opsTd = document.createElement("td");
-    opsTd.textContent = condition.ops.toUpperCase();
+    opsTd.textContent = condition.ops;
     tr.appendChild(opsTd);
 
     // Create Indicator 2 cell
@@ -914,14 +852,6 @@ document
 document
   .getElementById("delete-button-exit")
   .addEventListener("click", deleteSelectedExitConditions);
-populateTable("entry-condition-table-body", state.entry_conditions);
-populateTable("exit-condition-table-body", state.exit_conditions);
-renderTable();
-populateSelect("indicator-one-entry", state.indicators);
-populateSelect("indicator-two-entry", state.indicators);
-populateSelect("indicator-one-exit", state.indicators);
-populateSelect("indicator-two-exit", state.indicators);
-populateSymbol("symbol", stock_data);
 
 function dataSetting(event) {
   event.preventDefault();
