@@ -749,6 +749,14 @@ function indicatorCreate(event) {
         "]]"
     );
   }
+  if (indicatorType === "VALUE") {
+    indicatorString = "";
+    formData.forEach((value, key) => {
+      indicator[key] = value;
+      if (key != "indicatorName")
+        indicatorString = indicatorString.concat(value);
+    });
+  }
   indicator["indicatorString"] = indicatorString;
   const modal = document.getElementById("indicatorbuilder");
   const bootstrapModal = bootstrap.Modal.getInstance(modal);
